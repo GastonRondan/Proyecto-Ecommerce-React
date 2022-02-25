@@ -10,9 +10,8 @@ ul {
           flex-direction: row;
   list-style: none;
   font-size: 1.2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-weight: 200;
 }
 
@@ -20,11 +19,20 @@ ul li {
   color: aliceblue;
   background-color: #6247AA;
   margin: 2rem;
+  cursor: pointer;
 }
 
-.Carrito {
-  border: 2px solid white;
-  padding: 5px;
-  border-radius: 12px;
+.contenedorCarrito {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 1.2rem;
+  padding: 8px;
+}
+
+.contenedorCarrito .Carrito {
+  height: 49px;
 }
 /*# sourceMappingURL=NavBar.css.map */
