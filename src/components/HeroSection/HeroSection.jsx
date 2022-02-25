@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class ComponenteClase extends Component {
   render() {
     return (
-     <h1>Bienvenido a mi E-commerce</h1>
+     <h1 className='heroSection'>Bienvenido a mi e-commerce, esto es un Hero section</h1>
     )
   }
 }
