@@ -4,8 +4,12 @@ function ItemCount({ div }) {
     const [count, setCount] = useState( 0 )
 
 
-    const handleCount = () => {
+    const increaseCount = () => {
         setCount ( count + 1 )
+    }
+
+    const decreaseCount = () => {
+        setCount ( count - 1 )
     }
 
 
@@ -14,7 +18,8 @@ function ItemCount({ div }) {
             {div()}
 
             <label>{count}</label>
-            <button onClick={ handleCount }>Click para sumar</button>
+            <button onClick={ increaseCount }>Click para sumar</button>
+            <button onClick={ decreaseCount }>Click para restar</button>
         </div>
     )
 }
