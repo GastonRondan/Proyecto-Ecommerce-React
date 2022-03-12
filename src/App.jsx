@@ -6,6 +6,7 @@ import './components/ItemListContainer/ItemListContainer.css';
 import './components/HeroSection/HeroSection.css';
 import ItemCount from './components/ItemCount/ItemCount';
 import Div from './components/Div/Div';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 function App() { // Componente contenedor
   return (
@@ -13,7 +14,8 @@ function App() { // Componente contenedor
       <NavBar/>
       <ComponenteClase/>
       <ItemListContainer/>
-      <ItemCount div = {Div} />
+      <ItemCount div = {Div} /> 
+      <ItemDetailContainer/>
     </div>
   );
 }
