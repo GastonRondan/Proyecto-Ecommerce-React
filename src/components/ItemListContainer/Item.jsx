@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount';
 
-export const Item = ({title, description, price, imgUrl, stock}) => {
+export const Item = ({title, description, price, imgUrl, stock, id}) => {
+    const [count, setCount] = useState(null)
+    const onAdd = cant =>{
+        console.log(cant)
+    }
     return (
         <div className='item'>
             <div className='title'>{title}</div>
             <img src={imgUrl} alt={title} />
-            <div className='price'>${price}</div>
+            <div className='price'>{`$${price}`}</div>
             <div className='description'>{description}</div>
+            <div>
+            <Link to={`/detalle/${id}`}>
             <button>Ver detalles del producto</button>
+            </Link>
+            </div>
             <div className='stock'>stock disponible: {stock}</div>
+            <ItemCount initial={1} stock={10} onAdd={onAdd} />
         </div>
     )
 }

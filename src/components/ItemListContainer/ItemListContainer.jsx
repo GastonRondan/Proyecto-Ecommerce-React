@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { stock } from '../../data/stock'
-import { listarArray } from "../helpers/listarArray"
+import { listarArray, Detalle } from "../helpers/listarArray"
 import { ItemList } from './ItemList'
 import './ItemListContainer.css'
 export const ItemListContainer =() =>{
 
-
-   const [items, setItems] = useState([])
-   const [loading, setLoading] = useState(true)
-
+  
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(true)
+  const { categoriaId } = useParams()
+  
     useEffect(() => {
-        setLoading(true)
+      if(categoriaId){
+        listarArray(stock)
+        .then((res) =>{ setItems(res.filter(producto => producto.categoria===categoriaId))
+        })
+        .catch((err)=>console.log(err))
+        .finally(()=>{
+        setLoading(false)
+        })
+
+      }else{
         listarArray(stock)
         .then((res) =>{ setItems(res)
         })
@@ -18,16 +29,20 @@ export const ItemListContainer =() =>{
         .finally(()=>{
         setLoading(false)
         })
-    }, [])
 
-return (
-   <div className="item-list-container">
+
+      }
+    }, [categoriaId])
+    console.log(categoriaId)
+
+    return (
+      <div className="item-list-container">
      {
-      loading?
-      <div className="cargando">Cargando...</div>
-      :
-      <ItemList items={items} />
-     }
+       loading?
+       <div className="cargando">Cargando...</div>
+       :
+       <ItemList items={items} />
+      }
    </div>
  ) 
 }

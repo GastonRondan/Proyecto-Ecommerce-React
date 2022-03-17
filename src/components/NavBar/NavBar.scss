@@ -1,4 +1,4 @@
-ul {
+.NavBar {
     margin: 0px;
     background-color: #6247AA;
     display: flex;
@@ -12,18 +12,56 @@ ul {
         background-color: #6247AA;
         margin: 2rem;
         cursor:pointer;
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
 
     }
-}
+    
+    .NavLink {
+        color: aliceblue;
+        background-color: #6247AA;
+        margin: 2rem;
+        cursor:pointer;
+        text-decoration: none;
+        display: block;
+    }
+
+        .products{  // 
+            justify-content: center ;
+            position: absolute;
+        }
+
+        .productsList{
+            position: relative;
+            display: none;
+            text-align: justify;
+
+           li a {
+                list-style: none;
+
+            }
+        }
+        li{
+            list-style: none;
+            float: left;
+        }
+        li:hover >ul{
+              display: block;
+    }
+          }
+    
+
+
 
 .contenedorCarrito{
     align-self: center;
     cursor:pointer;
-    border: 2px solid ;
-    border-radius: 1.2rem;
     padding: 8px;
 
     .Carrito{
         height: 49px;
     }
+
 }

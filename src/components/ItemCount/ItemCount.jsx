@@ -1,25 +1,37 @@
 import { useState } from "react";
 
-function ItemCount({ div }) {
-    const [count, setCount] = useState( 0 )
+const ItemCount = ({ initial, stock, onAdd }) => {
+    const [count, setCount] = useState( initial )
 
 
     const increaseCount = () => {
-        setCount ( count + 1 )
+        if (count < stock) {
+            setCount ( count + 1 )
+        }
     }
 
     const decreaseCount = () => {
-        setCount ( count - 1 )
+        if (count > initial) {
+            setCount( count - 1 )
+        }
     }
 
+    
+    const agregar = () => {
+        onAdd( count )
+    
+    }
 
     return (
         <div>
-            {div()}
 
+            <button onClick={ decreaseCount }>-</button>
             <label>{count}</label>
-            <button onClick={ increaseCount }>Click para sumar</button>
-            <button onClick={ decreaseCount }>Click para restar</button>
+            <button onClick={ increaseCount }>+</button>
+            <br/>
+            <button onClick={ agregar }>Agregar al carrito</button>
+             
+             
         </div>
     )
 }
