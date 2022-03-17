@@ -20,6 +20,9 @@ export const ItemListContainer =() =>{
         .finally(()=>{
         setLoading(false)
         })
+        return()=>{
+
+        }
 
       }else{
         listarArray(stock)
@@ -29,11 +32,13 @@ export const ItemListContainer =() =>{
         .finally(()=>{
         setLoading(false)
         })
+        return()=>{
+
+        }
 
 
       }
     }, [categoriaId])
-    console.log(categoriaId)
 
     return (
       <div className="item-list-container">
