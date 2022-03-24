@@ -18,8 +18,7 @@ export const Item = ({title, description, price, imgUrl, stock, id}) => {
             <button>Ver detalles del producto</button>
             </Link>
             </div>
-            <div className='stock'>stock disponible: {stock}</div>
-            <ItemCount initial={1} stock={10} onAdd={onAdd} />
+           <div className='stock'>stock disponible: {stock}</div>
         </div>
     )
 }

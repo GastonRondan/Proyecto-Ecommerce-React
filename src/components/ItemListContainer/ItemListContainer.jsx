@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { stock } from '../../data/stock'
-import { listarArray, Detalle } from "../helpers/listarArray"
+import { listarArray} from "../helpers/listarArray"
 import { ItemList } from './ItemList'
 import './ItemListContainer.css'
 export const ItemListContainer =() =>{
@@ -23,7 +23,6 @@ export const ItemListContainer =() =>{
         return()=>{
 
         }
-
       }else{
         listarArray(stock)
         .then((res) =>{ setItems(res)

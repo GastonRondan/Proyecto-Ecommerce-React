@@ -19,7 +19,7 @@ const NavBar = () => {
                </ul>
             </li>
             <li>Sobre nosotros</li>
-         <NavLink to='' className='contenedorCarrito'>
+         <NavLink to='/cart' className='contenedorCarrito'>
             <ComponenteImagen className='Carrito'/>
          </NavLink>
         </ul>
