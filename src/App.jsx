@@ -15,7 +15,6 @@ function App() { // Componente contenedor
        <BrowserRouter>
       <div className="App">
         <NavBar/>
-        <ComponenteClase/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>} />
           <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />

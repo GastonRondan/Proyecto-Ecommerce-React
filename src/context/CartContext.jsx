@@ -8,6 +8,7 @@ function CartContextProvider ({children}) {
     const [cart, setCart] = useState([])
 
     const agregarCart = (item) =>{
+        
         setCart([...cart, item])
     }
 
