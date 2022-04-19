@@ -1,13 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ComponenteClase from './components/HeroSection/HeroSection';
 import { NavBar} from './components/NavBar/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './context/CartContext';
 import './App.css';
 import './components/ItemListContainer/ItemListContainer.css';
-import './components/HeroSection/HeroSection.css';
 
 function App() { // Componente contenedor
   return (

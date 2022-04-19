@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount';
 
 export const Item = ({title, description, price, imgUrl, stock, id}) => {
-    const [count, setCount] = useState(null)
     const onAdd = cant =>{
         console.log(cant)
     }

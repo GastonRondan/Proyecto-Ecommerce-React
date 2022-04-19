@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, documentId, getDocs, getFirestore, query, writeBatch } from "firebase/firestore"
+import { addDoc, collection,getFirestore,} from "firebase/firestore"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 
@@ -25,12 +25,8 @@ function Cart() {
             const id = cartItem.id;
             const nombre = cartItem.title;
             const precio = cartItem.price * cartItem.cantidad;
-           
-
-
             return {id, nombre, precio}
         })
-        console.log(orden)
 
         const db = getFirestore()
         //Crear orden
@@ -39,24 +35,6 @@ function Cart() {
         .then(resp => setId(resp.id))
         .catch(err => console.log(err))
         .finally(() =>console.log )
-
-    //   Actualizo los stocks de 'items'
-    //   const queryCollection = collection(db, 'items')
-
-    //    const queryActualizarStock = await query(
-    //      queryCollection,
-    //      where( documentId(), 'in', cartList.map(it => it.id))
-    //    )
-
-    //    const batch = writeBatch(db)
-
-    //    await getDocs(queryActualizarStock)
-    //      .then(resp => resp.docs.forEach(resp => batch.update(res.ref,  {
-    //         stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
-    //   })))
-
-    //  batch.commit()
-
     }
     const handleChange = (e) => {
         setDataForm({
@@ -105,10 +83,8 @@ function Cart() {
                     value={dataForm.email}
                     onChange={handleChange}
                 /><br/>
-                {/* <button>Generar Orden</button> */}
                 <button>Terminar Compra</button>
             </form>
-
         </div>
     )
 }

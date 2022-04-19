@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,UAAU,EAAE,IAAI;CAGnB",
-    "sources": [
-        "HeroSection.scss"
-    ],
-    "names": [],
-    "file": "HeroSection.css"
-}

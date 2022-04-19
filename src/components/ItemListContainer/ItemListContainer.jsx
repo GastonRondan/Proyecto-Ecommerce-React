@@ -29,8 +29,6 @@ export const ItemListContainer =() =>{
     }
     }, [categoriaId])
 
-  console.log(items)
-
     return (
       <div className="item-list-container">
      {
